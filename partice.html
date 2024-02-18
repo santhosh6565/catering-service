@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Language Toggle</title>
+  <style>
+    .hide {
+      display: none;
+    }
+    
+    .tamil {
+      font-size: 15px; /* Adjust the font size for Tamil content as needed */
+    }
+  </style>
+</head>
+<body>
+  <div class="section">
+    <div class="english">
+      <h2>Section 1 in English</h2>
+      <p>This is the content of section 1 in English.</p>
+    </div>
+    <div class="tamil hide">
+      <h2>முகமூடியில் 1 தமிழில்</h2>
+      <p>இந்த பகுப்புக்கான உள்ளடக்கம் தமிழில்.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="english">
+      <h2>Section 2 in English</h2>
+      <p>This is the content of section 2 in English.</p>
+    </div>
+    <div class="tamil hide">
+      <h2>முகமூடியில் 2 தமிழில்</h2>
+      <p>இந்த பகுப்புக்கான உள்ளடக்கம் தமிழில்.</p>
+    </div>
+  </div>
+
+  <button id="toggleBtn">Toggle Language</button>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const toggleBtn = document.getElementById('toggleBtn');
+      const sections = document.querySelectorAll('.section');
+
+      let isEnglish = true;
+
+      toggleBtn.addEventListener('click', function() {
+        isEnglish = !isEnglish;
+        sections.forEach(section => {
+          const englishContent = section.querySelector('.english');
+          const tamilContent = section.querySelector('.tamil');
+          
+          if (isEnglish) {
+            englishContent.classList.remove('hide');
+            tamilContent.classList.add('hide');
+          } else {
+            englishContent.classList.add('hide');
+            tamilContent.classList.remove('hide');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
