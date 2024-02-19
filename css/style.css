@@ -97,6 +97,7 @@
 .text-primary{
     color: #288aa8 !important;
 }
+.text-capitalize{text-transform:capitalize !important}
 
 /*** Topbar End ***/
 
